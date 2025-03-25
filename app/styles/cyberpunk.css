@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+
+:root {
+  --neon-text-color: #f40b88;
+  --neon-border-color: #08f;
+  --primary-dark: #0a0a0f;
+  --primary-light: #e6e6fa;
+  --accent-1: #f40b88;
+  --accent-2: #08f;
+  --accent-3: #0f0;
+  --glitch-color: rgba(244, 11, 136, 0.8);
+}
+
+.cyberpunk-text {
+  font-family: 'Orbitron', sans-serif;
+  text-transform: uppercase;
+  color: var(--neon-text-color);
+  text-shadow: 0 0 5px var(--neon-text-color),
+               0 0 10px var(--neon-text-color),
+               0 0 20px var(--neon-text-color);
+  animation: textFlicker 3s infinite alternate;
+}
+
+.cyberpunk-card {
+  background: rgba(10, 10, 15, 0.9);
+  border: 2px solid var(--neon-border-color);
+  box-shadow: 0 0 10px var(--neon-border-color),
+              inset 0 0 10px var(--neon-border-color);
+  backdrop-filter: blur(5px);
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 20px var(--neon-border-color),
+              inset 0 0 15px var(--neon-border-color);
+}
+
+.neon-button {
+  font-family: 'Share Tech Mono', monospace;
+  padding: 1rem 2rem;
+  border: 2px solid var(--neon-border-color);
+  color: var(--neon-border-color);
+  text-transform: uppercase;
+  background: transparent;
+  box-shadow: 0 0 10px var(--neon-border-color),
+              inset 0 0 10px var(--neon-border-color);
+  text-shadow: 0 0 5px var(--neon-border-color);
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.neon-button:hover {
+  background: var(--neon-border-color);
+  color: var(--primary-dark);
+  box-shadow: 0 0 20px var(--neon-border-color);
+}
+
+.neon-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(8, 136, 255, 0.4),
+    transparent
+  );
+  transition: 0.5s;
+}
+
+.neon-button:hover::before {
+  left: 100%;
+}
+
+.glitch-effect {
+  position: relative;
+}
+
+.glitch-effect::before,
+.glitch-effect::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.glitch-effect::before {
+  left: 2px;
+  text-shadow: -2px 0 var(--accent-2);
+  clip: rect(24px, 550px, 90px, 0);
+  animation: glitch-anim-2 3s infinite linear alternate-reverse;
+}
+
+.glitch-effect::after {
+  left: -2px;
+  text-shadow: -2px 0 var(--accent-1);
+  clip: rect(85px, 550px, 140px, 0);
+  animation: glitch-anim 2.5s infinite linear alternate-reverse;
+}
+
+@keyframes textFlicker {
+  0% {
+    text-shadow: 0 0 5px var(--neon-text-color),
+                 0 0 10px var(--neon-text-color),
+                 0 0 20px var(--neon-text-color);
+  }
+  50% {
+    text-shadow: 0 0 5px var(--neon-text-color),
+                 0 0 15px var(--neon-text-color),
+                 0 0 25px var(--neon-text-color),
+                 0 0 30px var(--neon-text-color);
+  }
+  100% {
+    text-shadow: 0 0 5px var(--neon-text-color),
+                 0 0 10px var(--neon-text-color),
+                 0 0 20px var(--neon-text-color);
+  }
+}
+
+@keyframes glitch-anim {
+  0% {
+    clip: rect(42px, 9999px, 44px, 0);
+  }
+  100% {
+    clip: rect(32px, 9999px, 162px, 0);
+  }
+}
+
+@keyframes glitch-anim-2 {
+  0% {
+    clip: rect(12px, 9999px, 52px, 0);
+  }
+  100% {
+    clip: rect(62px, 9999px, 82px, 0);
+  }
+}
+
+.grid-background {
+  background-image: linear-gradient(var(--accent-2) 1px, transparent 1px),
+                    linear-gradient(90deg, var(--accent-2) 1px, transparent 1px);
+  background-size: 20px 20px;
+  background-color: var(--primary-dark);
+  opacity: 0.1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.cyberpunk-container {
+  background-color: var(--primary-dark);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.cyberpunk-header {
+  position: relative;
+  padding: 2rem;
+  background: linear-gradient(45deg, var(--primary-dark), rgba(8, 136, 255, 0.1));
+  border-bottom: 2px solid var(--neon-border-color);
+}
+
+.cyberpunk-nav {
+  font-family: 'Share Tech Mono', monospace;
+  text-transform: uppercase;
+} 
