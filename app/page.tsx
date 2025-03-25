@@ -3,51 +3,59 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
+    <main className="relative">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center overflow-hidden">
+      <section className="hero-section">
         <div className="absolute inset-0 z-0">
           <div className="grid-background"></div>
         </div>
-        <div className="container mx-auto px-4 z-10">
-          <div className="flex flex-col items-center text-center">
-            <h1 className="cyberpunk-text text-6xl font-bold mb-6 glitch-effect" data-text="Welcome to AI Academy">
-              Welcome to AI Academy
+        <div className="container mx-auto px-6 z-10">
+          <div className="flex flex-col items-center text-center max-w-4xl mx-auto">
+            <h1 className="cyberpunk-text main-title mb-8" data-text="Ready to Start Learning?">
+              Ready to Start Learning?
             </h1>
-            <p className="text-white text-xl mb-8 max-w-2xl">
-              Discover the exciting world of Artificial Intelligence through fun and interactive learning!
-              Join the next generation of tech innovators.
+            <p className="text-xl md:text-2xl mb-12 leading-relaxed">
+              Join our AI Academy today and begin an amazing journey into the world of technology!
             </p>
             <Link 
               href="/courses" 
               className="neon-button"
             >
-              Start Learning
+              Start Your Journey
             </Link>
           </div>
         </div>
       </section>
 
       {/* Features Section */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <h2 className="cyberpunk-text text-3xl font-bold text-center mb-12">Why Choose Our AI Academy?</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="cyberpunk-card p-6">
-              <h3 className="text-xl font-semibold mb-4 text-accent-2">Fun Learning Experience</h3>
-              <p className="text-gray-300">
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold text-center mb-16">Why Choose Our AI Academy?</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="cyberpunk-card p-8">
+              <div className="mb-6">
+                <span className="text-5xl">🎮</span>
+              </div>
+              <h3>Fun Learning Experience</h3>
+              <p>
                 Interactive lessons designed specifically for children under 9 years old.
               </p>
             </div>
-            <div className="cyberpunk-card p-6">
-              <h3 className="text-xl font-semibold mb-4 text-accent-1">Expert Instructors</h3>
-              <p className="text-gray-300">
+            <div className="cyberpunk-card p-8">
+              <div className="mb-6">
+                <span className="text-5xl">🤖</span>
+              </div>
+              <h3>Expert Instructors</h3>
+              <p>
                 Learn from passionate teachers who make AI concepts easy to understand.
               </p>
             </div>
-            <div className="cyberpunk-card p-6">
-              <h3 className="text-xl font-semibold mb-4 text-accent-3">Hands-on Projects</h3>
-              <p className="text-gray-300">
+            <div className="cyberpunk-card p-8">
+              <div className="mb-6">
+                <span className="text-5xl">🎨</span>
+              </div>
+              <h3>Hands-on Projects</h3>
+              <p>
                 Create exciting projects while learning the basics of AI and programming.
               </p>
             </div>
@@ -56,54 +64,57 @@ export default function Home() {
       </section>
 
       {/* Courses Preview Section */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4">
-          <h2 className="cyberpunk-text text-3xl font-bold text-center mb-12">Featured Courses</h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="cyberpunk-card overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-accent-1 to-accent-2 flex items-center justify-center">
-                <span className="text-4xl">🎮</span>
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold text-center mb-16">Featured Courses</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12">
+            <div className="cyberpunk-card group">
+              <div className="h-64 bg-gradient-to-br from-electric-blue via-hot-pink to-bright-yellow flex items-center justify-center relative overflow-hidden">
+                <span className="text-6xl transform group-hover:scale-110 transition-transform duration-500">🎮</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-accent-2">AI Explorers</h3>
-                <p className="text-gray-300 mb-4">Perfect for beginners! Learn the basics of AI through fun activities.</p>
+              <div className="p-8">
+                <h3>AI Explorers</h3>
+                <p className="mb-6">Perfect for beginners! Learn the basics of AI through fun activities.</p>
                 <Link 
                   href="/courses/intro-to-ai"
-                  className="text-accent-2 font-semibold hover:text-accent-1 transition-colors"
+                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
                 >
-                  Learn More →
+                  <span className="mr-2">Learn More</span>
+                  <span className="text-xl">→</span>
                 </Link>
               </div>
             </div>
 
-            <div className="cyberpunk-card overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-accent-2 to-accent-3 flex items-center justify-center">
-                <span className="text-4xl">🤖</span>
+            <div className="cyberpunk-card group">
+              <div className="h-64 bg-gradient-to-br from-bright-yellow via-electric-blue to-hot-pink flex items-center justify-center relative overflow-hidden">
+                <span className="text-6xl transform group-hover:scale-110 transition-transform duration-500">🤖</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-accent-1">AI & Games</h3>
-                <p className="text-gray-300 mb-4">Create your own AI-powered games and learn machine learning!</p>
+              <div className="p-8">
+                <h3>AI & Games</h3>
+                <p className="mb-6">Create your own AI-powered games and learn machine learning!</p>
                 <Link 
                   href="/courses/ai-games"
-                  className="text-accent-1 font-semibold hover:text-accent-2 transition-colors"
+                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
                 >
-                  Learn More →
+                  <span className="mr-2">Learn More</span>
+                  <span className="text-xl">→</span>
                 </Link>
               </div>
             </div>
 
-            <div className="cyberpunk-card overflow-hidden">
-              <div className="h-48 bg-gradient-to-r from-accent-3 to-accent-1 flex items-center justify-center">
-                <span className="text-4xl">🎨</span>
+            <div className="cyberpunk-card group">
+              <div className="h-64 bg-gradient-to-br from-hot-pink via-bright-yellow to-electric-blue flex items-center justify-center relative overflow-hidden">
+                <span className="text-6xl transform group-hover:scale-110 transition-transform duration-500">🎨</span>
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold mb-2 text-accent-3">Creative AI</h3>
-                <p className="text-gray-300 mb-4">Explore how AI can help create amazing artwork and music!</p>
+              <div className="p-8">
+                <h3>Creative AI</h3>
+                <p className="mb-6">Explore how AI can help create amazing artwork and music!</p>
                 <Link 
                   href="/courses/creative-ai"
-                  className="text-accent-3 font-semibold hover:text-accent-1 transition-colors"
+                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
                 >
-                  Learn More →
+                  <span className="mr-2">Learn More</span>
+                  <span className="text-xl">→</span>
                 </Link>
               </div>
             </div>
@@ -112,11 +123,11 @@ export default function Home() {
       </section>
 
       {/* Call to Action */}
-      <section className="py-16 relative">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="cyberpunk-text text-3xl font-bold mb-6">Ready to Start Learning?</h2>
-          <p className="text-white text-xl mb-8">
-            Join our AI Academy today and begin an amazing journey into the world of technology!
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6 text-center max-w-4xl">
+          <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold mb-8">Ready to Join?</h2>
+          <p className="text-xl md:text-2xl mb-12 mx-auto">
+            Take the first step into the exciting world of AI. Start your journey today!
           </p>
           <Link 
             href="/contact"

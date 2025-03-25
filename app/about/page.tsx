@@ -2,109 +2,113 @@ import React from 'react'
 
 export default function AboutPage() {
   return (
-    <main className="min-h-screen py-16">
-      <div className="container mx-auto px-4">
-        <h1 className="text-4xl font-bold text-center mb-12">About AI Academy</h1>
-
-        {/* Mission Section */}
-        <section className="mb-16">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-2xl font-bold mb-6">Our Mission</h2>
-            <p className="text-gray-600 text-lg mb-8">
-              At AI Academy, we believe in making artificial intelligence education accessible,
-              fun, and engaging for young minds. Our mission is to prepare the next generation
-              for a future where AI plays an increasingly important role in our daily lives.
-            </p>
-          </div>
-        </section>
-
-        {/* Why Choose Us Section */}
-        <section className="bg-gray-50 py-12 rounded-lg mb-16">
-          <div className="max-w-6xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-12">Why Choose AI Academy?</h2>
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 px-4">
-              <div className="text-center">
-                <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">👨‍🏫</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-4">Expert Teachers</h3>
-                <p className="text-gray-600">
-                  Our instructors are passionate about both AI and teaching children,
-                  making complex concepts easy to understand.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🎮</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-4">Learning Through Play</h3>
-                <p className="text-gray-600">
-                  We believe in making learning fun! Our curriculum is designed to teach
-                  through interactive games and activities.
-                </p>
-              </div>
-
-              <div className="text-center">
-                <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-3xl">🌟</span>
-                </div>
-                <h3 className="text-xl font-semibold mb-4">Age-Appropriate Content</h3>
-                <p className="text-gray-600">
-                  All our courses are specifically designed for children under 9,
-                  ensuring the perfect learning pace and complexity.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Our Approach Section */}
-        <section className="mb-16">
-          <div className="max-w-3xl mx-auto">
-            <h2 className="text-2xl font-bold text-center mb-8">Our Approach</h2>
-            <div className="space-y-6">
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Hands-on Learning</h3>
-                <p className="text-gray-600">
-                  Children learn best by doing. Our courses involve practical projects
-                  and interactive exercises that make learning both fun and effective.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Safe Learning Environment</h3>
-                <p className="text-gray-600">
-                  We provide a secure, monitored environment where children can explore
-                  and learn about AI safely and confidently.
-                </p>
-              </div>
-
-              <div className="bg-white p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3">Regular Feedback</h3>
-                <p className="text-gray-600">
-                  We maintain open communication with parents about their child's progress
-                  and achievements throughout the course.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Call to Action */}
-        <section className="text-center">
-          <h2 className="text-2xl font-bold mb-6">Ready to Start?</h2>
-          <p className="text-gray-600 mb-8">
-            Join us in preparing your child for the future of technology!
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-blue-600 text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors"
-          >
-            Contact Us Today
-          </a>
-        </section>
+    <main className="relative">
+      <div className="absolute inset-0 z-0">
+        <div className="grid-background"></div>
       </div>
+
+      {/* Mission Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="cyberpunk-text main-title mb-8">Our Mission</h1>
+            <div className="cyberpunk-card p-8 mb-16 bg-gradient-glow">
+              <p className="text-xl md:text-2xl leading-relaxed">
+                At AI Academy, we believe in making artificial intelligence education accessible, fun,
+                and engaging for young minds. Our mission is to prepare the next generation for a
+                future where AI plays an increasingly important role in our daily lives.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Approach Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold text-center mb-16">Our Approach</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🎯</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Hands-on Learning</h3>
+              <p>Children learn best by doing. Our courses involve practical projects and interactive exercises that make learning both fun and effective.</p>
+            </div>
+
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🛡️</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Safe Learning Environment</h3>
+              <p>We provide a secure, monitored environment where children can explore and learn about AI safely and confidently.</p>
+            </div>
+
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">📝</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Regular Feedback</h3>
+              <p>We maintain open communication with parents about their child's progress and achievements throughout the course.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Values Section */}
+      <section className="py-32 relative bg-primary-dark/50 backdrop-blur-lg">
+        <div className="container mx-auto px-6">
+          <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold text-center mb-16">Our Values</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🌟</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Innovation</h3>
+              <p>We stay at the forefront of AI education, constantly updating our curriculum with the latest developments and best practices.</p>
+            </div>
+
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🤝</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Inclusivity</h3>
+              <p>We believe every child should have the opportunity to learn about AI, regardless of their background or prior experience.</p>
+            </div>
+
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🎓</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Excellence</h3>
+              <p>We maintain high standards in our teaching methods and materials, ensuring quality education for all our students.</p>
+            </div>
+
+            <div className="cyberpunk-card group p-8">
+              <div className="mb-6">
+                <span className="text-4xl">🌱</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-4">Growth</h3>
+              <p>We foster a growth mindset, encouraging students to learn from challenges and celebrate their progress.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Call to Action */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6 text-center">
+          <div className="cyberpunk-card p-12 bg-gradient-glow max-w-4xl mx-auto">
+            <h2 className="cyberpunk-text text-4xl md:text-5xl font-bold mb-8">Ready to Join Us?</h2>
+            <p className="text-xl mb-12">
+              Join us in preparing your child for the future of technology!
+            </p>
+            <a href="/contact" className="neon-button inline-block">
+              Contact Us Today
+            </a>
+          </div>
+        </div>
+      </section>
     </main>
   )
 } 

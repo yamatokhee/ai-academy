@@ -1,127 +1,138 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    parentName: '',
-    email: '',
-    childAge: '',
-    message: ''
-  })
-
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault()
-    // Here you would typically handle the form submission
-    console.log('Form submitted:', formData)
-    // Reset form
-    setFormData({
-      parentName: '',
-      email: '',
-      childAge: '',
-      message: ''
-    })
-    alert('Thank you for your message! We will get back to you soon.')
-  }
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
   return (
-    <main className="min-h-screen py-16 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <div className="max-w-2xl mx-auto">
-          <h1 className="text-4xl font-bold text-center mb-8">Contact Us</h1>
-          <p className="text-gray-600 text-center mb-12">
-            Have questions about our AI Academy? We'd love to hear from you!
-          </p>
+    <main className="relative">
+      <div className="absolute inset-0 z-0">
+        <div className="grid-background"></div>
+      </div>
 
-          <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-md p-8">
-            <div className="mb-6">
-              <label htmlFor="parentName" className="block text-gray-700 font-medium mb-2">
-                Parent's Name
-              </label>
-              <input
-                type="text"
-                id="parentName"
-                name="parentName"
-                value={formData.parentName}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+      {/* Contact Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="cyberpunk-text main-title text-center mb-16">Contact Us</h1>
 
-            <div className="mb-6">
-              <label htmlFor="email" className="block text-gray-700 font-medium mb-2">
-                Email Address
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+              {/* Contact Form */}
+              <div className="cyberpunk-card p-8">
+                <h2 className="text-2xl font-bold mb-8 text-bright-yellow">Get in Touch</h2>
+                <form className="space-y-6">
+                  <div>
+                    <label className="block text-bright-yellow mb-2" htmlFor="name">
+                      Name
+                    </label>
+                    <input
+                      type="text"
+                      id="name"
+                      className="w-full bg-primary-dark/50 border border-electric-blue p-3 text-pale-silver focus:border-bright-yellow focus:ring-1 focus:ring-bright-yellow transition-colors"
+                      placeholder="Your name"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-bright-yellow mb-2" htmlFor="email">
+                      Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full bg-primary-dark/50 border border-electric-blue p-3 text-pale-silver focus:border-bright-yellow focus:ring-1 focus:ring-bright-yellow transition-colors"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-bright-yellow mb-2" htmlFor="message">
+                      Message
+                    </label>
+                    <textarea
+                      id="message"
+                      rows={6}
+                      className="w-full bg-primary-dark/50 border border-electric-blue p-3 text-pale-silver focus:border-bright-yellow focus:ring-1 focus:ring-bright-yellow transition-colors"
+                      placeholder="Your message..."
+                    ></textarea>
+                  </div>
+                  <button type="submit" className="neon-button w-full">
+                    Send Message
+                  </button>
+                </form>
+              </div>
 
-            <div className="mb-6">
-              <label htmlFor="childAge" className="block text-gray-700 font-medium mb-2">
-                Child's Age
-              </label>
-              <input
-                type="number"
-                id="childAge"
-                name="childAge"
-                value={formData.childAge}
-                onChange={handleChange}
-                min="5"
-                max="9"
-                required
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+              {/* Contact Info */}
+              <div className="space-y-8">
+                <div className="cyberpunk-card p-8">
+                  <h2 className="text-2xl font-bold mb-6 text-bright-yellow">Visit Us</h2>
+                  <div className="space-y-4">
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">📍</span>
+                      123 Tech Street, Digital City, DC 12345
+                    </p>
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">📞</span>
+                      (555) 123-4567
+                    </p>
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">📧</span>
+                      info@aiacademy.com
+                    </p>
+                  </div>
+                </div>
 
-            <div className="mb-6">
-              <label htmlFor="message" className="block text-gray-700 font-medium mb-2">
-                Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                required
-                rows={4}
-                className="w-full px-4 py-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
-              />
-            </div>
+                <div className="cyberpunk-card p-8">
+                  <h2 className="text-2xl font-bold mb-6 text-bright-yellow">Office Hours</h2>
+                  <div className="space-y-4">
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">📅</span>
+                      Monday - Friday: 9:00 AM - 6:00 PM
+                    </p>
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">🌟</span>
+                      Saturday: 10:00 AM - 2:00 PM
+                    </p>
+                    <p className="flex items-center text-pale-silver">
+                      <span className="text-2xl mr-4">🌙</span>
+                      Sunday: Closed
+                    </p>
+                  </div>
+                </div>
 
-            <button
-              type="submit"
-              className="w-full bg-blue-600 text-white py-3 rounded-md hover:bg-blue-700 transition-colors"
-            >
-              Send Message
-            </button>
-          </form>
-
-          <div className="mt-12 text-center">
-            <h2 className="text-2xl font-bold mb-4">Other Ways to Reach Us</h2>
-            <div className="space-y-2 text-gray-600">
-              <p>Email: info@aiacademy.com</p>
-              <p>Phone: (123) 456-7890</p>
-              <p>Address: 123 Learning Street, Education City</p>
+                <div className="cyberpunk-card p-8">
+                  <h2 className="text-2xl font-bold mb-6 text-bright-yellow">Follow Us</h2>
+                  <div className="flex space-x-4">
+                    <a href="#" className="text-3xl hover:text-bright-yellow transition-colors">
+                      📱
+                    </a>
+                    <a href="#" className="text-3xl hover:text-bright-yellow transition-colors">
+                      💻
+                    </a>
+                    <a href="#" className="text-3xl hover:text-bright-yellow transition-colors">
+                      📸
+                    </a>
+                    <a href="#" className="text-3xl hover:text-bright-yellow transition-colors">
+                      🐦
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
+
+      {/* Map Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="cyberpunk-card p-8 bg-gradient-glow">
+            <div className="aspect-w-16 aspect-h-9 bg-primary-dark/50">
+              {/* Add your map component here */}
+              <div className="w-full h-full flex items-center justify-center">
+                <span className="text-6xl">🗺️</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   )
 } 

@@ -1,80 +1,159 @@
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Share+Tech+Mono&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --neon-text-color: #f40b88;
-  --neon-border-color: #08f;
-  --primary-dark: #0a0a0f;
-  --primary-light: #e6e6fa;
-  --accent-1: #f40b88;
-  --accent-2: #08f;
-  --accent-3: #0f0;
-  --glitch-color: rgba(244, 11, 136, 0.8);
+  --raisin-black: #272932;
+  --blood-red: #710000;
+  --bright-yellow: #FDF500;
+  --keppel: #1AC5B0;
+  --electric-blue: #37EBF3;
+  --blue-purple: #937CDB;
+  --hot-pink: #E458AB;
+  --steel-pink: #CB1DCD;
+  --pale-silver: #DIC5C0;
+  
+  --neon-text-color: var(--hot-pink);
+  --neon-border-color: var(--electric-blue);
+  --primary-dark: var(--raisin-black);
+  --primary-light: var(--pale-silver);
+  --accent-1: var(--hot-pink);
+  --accent-2: var(--electric-blue);
+  --accent-3: var(--keppel);
+  --glitch-color: var(--steel-pink);
+  --grid-color: rgba(55, 235, 243, 0.1);
+  --neon-glow: 0 0 10px rgba(55, 235, 243, 0.5);
+  --text-glow: 0 0 20px rgba(253, 245, 0, 0.3);
 }
 
 .cyberpunk-text {
-  font-family: 'Orbitron', sans-serif;
+  font-family: 'Space Grotesk', sans-serif;
   text-transform: uppercase;
-  color: var(--neon-text-color);
-  text-shadow: 0 0 5px var(--neon-text-color),
-               0 0 10px var(--neon-text-color),
-               0 0 20px var(--neon-text-color);
-  animation: textFlicker 3s infinite alternate;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--bright-yellow);
+  text-shadow: var(--text-glow);
+  position: relative;
+}
+
+.main-title {
+  font-size: clamp(2.5rem, 8vw, 6rem);
+  line-height: 1;
+  background: linear-gradient(to right, var(--bright-yellow), var(--electric-blue));
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: titleFloat 4s ease-in-out infinite;
+}
+
+@keyframes titleFloat {
+  0%, 100% {
+    transform: translateY(0);
+    text-shadow: var(--text-glow);
+  }
+  50% {
+    transform: translateY(-10px);
+    text-shadow: var(--text-glow), 0 10px 20px rgba(253, 245, 0, 0.2);
+  }
 }
 
 .cyberpunk-card {
-  background: rgba(10, 10, 15, 0.9);
-  border: 2px solid var(--neon-border-color);
-  box-shadow: 0 0 10px var(--neon-border-color),
-              inset 0 0 10px var(--neon-border-color);
-  backdrop-filter: blur(5px);
-  transition: all 0.3s ease;
+  background: rgba(39, 41, 50, 0.95);
+  border: 1px solid rgba(55, 235, 243, 0.2);
+  backdrop-filter: blur(10px);
+  box-shadow: var(--neon-glow);
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cyberpunk-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    rgba(55, 235, 243, 0.1),
+    rgba(228, 88, 171, 0.1),
+    rgba(253, 245, 0, 0.1)
+  );
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.cyberpunk-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, 
+    transparent, 
+    var(--electric-blue),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: transform 0.5s;
 }
 
 .cyberpunk-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 0 20px var(--neon-border-color),
-              inset 0 0 15px var(--neon-border-color);
+  border-color: var(--electric-blue);
+  background: rgba(39, 41, 50, 0.98);
+  box-shadow: 0 0 20px rgba(55, 235, 243, 0.3),
+              inset 0 0 20px rgba(55, 235, 243, 0.2);
+}
+
+.cyberpunk-card:hover::before {
+  opacity: 1;
+}
+
+.cyberpunk-card:hover::after {
+  transform: translateX(100%);
+}
+
+.cyberpunk-card > div {
+  position: relative;
+  z-index: 2;
 }
 
 .neon-button {
-  font-family: 'Share Tech Mono', monospace;
-  padding: 1rem 2rem;
-  border: 2px solid var(--neon-border-color);
-  color: var(--neon-border-color);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  padding: 1rem 2.5rem;
+  border: 1px solid rgba(55, 235, 243, 0.3);
+  color: var(--bright-yellow);
   text-transform: uppercase;
-  background: transparent;
-  box-shadow: 0 0 10px var(--neon-border-color),
-              inset 0 0 10px var(--neon-border-color);
-  text-shadow: 0 0 5px var(--neon-border-color);
-  transition: all 0.3s ease;
+  letter-spacing: 0.1em;
+  background: rgba(39, 41, 50, 0.8);
+  backdrop-filter: blur(10px);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
 }
 
-.neon-button:hover {
-  background: var(--neon-border-color);
-  color: var(--primary-dark);
-  box-shadow: 0 0 20px var(--neon-border-color);
-}
-
-.neon-button::before {
+.neon-button::after {
   content: '';
   position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(8, 136, 255, 0.4),
+  inset: 0;
+  background: linear-gradient(45deg, 
+    transparent, 
+    rgba(55, 235, 243, 0.1), 
     transparent
   );
-  transition: 0.5s;
+  opacity: 0;
+  transition: opacity 0.4s;
 }
 
-.neon-button:hover::before {
-  left: 100%;
+.neon-button:hover {
+  border-color: var(--electric-blue);
+  box-shadow: var(--neon-glow);
+  transform: translateY(-2px);
+}
+
+.neon-button:hover::after {
+  opacity: 1;
 }
 
 .glitch-effect {
@@ -105,25 +184,6 @@
   animation: glitch-anim 2.5s infinite linear alternate-reverse;
 }
 
-@keyframes textFlicker {
-  0% {
-    text-shadow: 0 0 5px var(--neon-text-color),
-                 0 0 10px var(--neon-text-color),
-                 0 0 20px var(--neon-text-color);
-  }
-  50% {
-    text-shadow: 0 0 5px var(--neon-text-color),
-                 0 0 15px var(--neon-text-color),
-                 0 0 25px var(--neon-text-color),
-                 0 0 30px var(--neon-text-color);
-  }
-  100% {
-    text-shadow: 0 0 5px var(--neon-text-color),
-                 0 0 10px var(--neon-text-color),
-                 0 0 20px var(--neon-text-color);
-  }
-}
-
 @keyframes glitch-anim {
   0% {
     clip: rect(42px, 9999px, 44px, 0);
@@ -143,34 +203,215 @@
 }
 
 .grid-background {
-  background-image: linear-gradient(var(--accent-2) 1px, transparent 1px),
-                    linear-gradient(90deg, var(--accent-2) 1px, transparent 1px);
-  background-size: 20px 20px;
-  background-color: var(--primary-dark);
-  opacity: 0.1;
+  background-image: 
+    linear-gradient(var(--grid-color) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+  background-size: clamp(20px, 3vw, 40px) clamp(20px, 3vw, 40px);
+  background-color: var(--raisin-black);
+  opacity: 0.5;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   z-index: -1;
+  pointer-events: none;
+  transform: perspective(1000px) rotateX(60deg) scale(2);
+  transform-origin: center center;
 }
 
 .cyberpunk-container {
-  background-color: var(--primary-dark);
+  background-color: var(--raisin-black);
+  color: var(--pale-silver);
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 .cyberpunk-header {
-  position: relative;
-  padding: 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  padding: 1rem;
   background: linear-gradient(45deg, var(--primary-dark), rgba(8, 136, 255, 0.1));
   border-bottom: 2px solid var(--neon-border-color);
+  backdrop-filter: blur(8px);
+}
+
+main {
+  padding-top: 4rem; /* Add space for fixed header */
+}
+
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  padding: 4rem 0;
 }
 
 .cyberpunk-nav {
   font-family: 'Share Tech Mono', monospace;
   text-transform: uppercase;
+}
+
+/* Improve text readability */
+p {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 300;
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 65ch;
+}
+
+h3 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 600;
+  color: var(--bright-yellow) !important;
+  font-size: 1.5rem;
+  letter-spacing: 0.02em;
+  margin-bottom: 1rem;
+}
+
+/* Course card specific styles */
+.cyberpunk-card ul li {
+  position: relative;
+  padding-left: 1rem;
+  transition: all 0.3s ease;
+}
+
+.cyberpunk-card ul li:hover {
+  transform: translateX(5px);
+  color: var(--bright-yellow);
+}
+
+.cyberpunk-card ul li span {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.cyberpunk-card ul li:hover span {
+  transform: scale(1.2);
+}
+
+.cyberpunk-card .text-4xl,
+.cyberpunk-card .text-5xl,
+.cyberpunk-card .text-6xl {
+  display: inline-block;
+  filter: drop-shadow(0 0 10px var(--electric-blue));
+  transition: all 0.5s ease;
+}
+
+.cyberpunk-card:hover .text-4xl,
+.cyberpunk-card:hover .text-5xl,
+.cyberpunk-card:hover .text-6xl {
+  transform: scale(1.1);
+  filter: drop-shadow(0 0 20px var(--bright-yellow));
+}
+
+/* Gradient backgrounds */
+.bg-gradient-glow {
+  position: relative;
+}
+
+.bg-gradient-glow::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    45deg,
+    var(--electric-blue),
+    var(--hot-pink),
+    var(--bright-yellow)
+  );
+  opacity: 0.1;
+  transition: opacity 0.3s ease;
+}
+
+.bg-gradient-glow:hover::before {
+  opacity: 0.2;
+}
+
+/* Section transitions */
+section {
+  position: relative;
+  z-index: 1;
+}
+
+section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--electric-blue),
+    transparent
+  );
+  opacity: 0.3;
+}
+
+/* Form styles */
+input, textarea {
+  background: rgba(39, 41, 50, 0.95);
+  border: 1px solid var(--electric-blue);
+  color: var(--pale-silver);
+  font-family: 'Space Grotesk', sans-serif;
+  transition: all 0.3s ease;
+}
+
+input:focus, textarea:focus {
+  outline: none;
+  border-color: var(--bright-yellow);
+  box-shadow: 0 0 10px rgba(253, 245, 0, 0.2);
+  background: rgba(39, 41, 50, 0.98);
+}
+
+input::placeholder, textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+/* Social links */
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  border: 1px solid var(--electric-blue);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+}
+
+.social-link:hover {
+  border-color: var(--bright-yellow);
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px rgba(253, 245, 0, 0.3);
+}
+
+/* Contact info items */
+.contact-info-item {
+  display: flex;
+  align-items: center;
+  padding: 1rem;
+  transition: all 0.3s ease;
+}
+
+.contact-info-item:hover {
+  background: rgba(55, 235, 243, 0.1);
+  transform: translateX(5px);
+}
+
+.contact-info-item span {
+  font-size: 1.5rem;
+  margin-right: 1rem;
+  color: var(--bright-yellow);
 } 
