@@ -14,7 +14,7 @@ export default function Navigation() {
           <Link href="/" className="flex items-center">
             <div className="relative w-[280px] h-[70px] md:w-[480px] md:h-[120px] bg-transparent">
               <Image
-                src="/ai-academy/robo-monkey-logo.png"
+                src="/robo-monkey-logo.png"
                 alt="Robo-Monkey AI Academy Logo"
                 fill
                 className="object-contain"
