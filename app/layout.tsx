@@ -8,8 +8,8 @@ import Link from 'next/link'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: 'AI Academy for Kids',
-  description: 'Learn AI concepts through fun and interactive lessons designed for children under 9 years old.',
+  title: 'Robo-Monkey AI Academy',
+  description: 'AI Academy for children under 9 years old',
 }
 
 export default function RootLayout({
@@ -19,15 +19,22 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <title>Robo-Monkey AI Academy</title>
+        <meta name="description" content="AI Academy for children under 9 years old" />
+        <link rel="icon" href="/favicon.ico" />
+      </head>
       <body className={`${inter.className} cyberpunk-container`}>
         <div className="grid-background"></div>
         {/* Navigation */}
         <nav className="cyberpunk-header">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center h-16">
-              <Link href="/" className="cyberpunk-text text-2xl font-bold">
-                AI Academy
-              </Link>
+              <div className="flex items-center">
+                <Link href="/" className="text-2xl font-bold text-bright-yellow hover:text-electric-blue transition-colors">
+                  Robo-Monkey AI Academy
+                </Link>
+              </div>
               <div className="hidden md:flex space-x-8 cyberpunk-nav">
                 <Link href="/" className="text-white hover:text-accent-2 transition-colors">
                   Home

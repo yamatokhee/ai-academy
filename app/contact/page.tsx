@@ -12,13 +12,25 @@ export default function ContactPage() {
       {/* Contact Section */}
       <section className="py-32 relative">
         <div className="container mx-auto px-6">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="cyberpunk-text main-title text-center mb-16">Contact Us</h1>
+          <div className="max-w-4xl mx-auto text-center">
+            <h1 className="cyberpunk-text main-title mb-8">Contact Robo-Monkey AI Academy</h1>
+            <div className="cyberpunk-card p-8 mb-16 bg-gradient-glow">
+              <p className="text-xl md:text-2xl leading-relaxed text-pale-silver">
+                Have questions? We'd love to hear from you. Send us a message and we'll respond as soon as possible.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
+      {/* Contact Section */}
+      <section className="py-32 relative">
+        <div className="container mx-auto px-6">
+          <div className="max-w-4xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               {/* Contact Form */}
               <div className="cyberpunk-card p-8">
-                <h2 className="text-2xl font-bold mb-8 text-bright-yellow">Get in Touch</h2>
+                <h2 className="text-2xl font-bold mb-6 text-bright-yellow">Get in Touch</h2>
                 <form className="space-y-6">
                   <div>
                     <label className="block text-bright-yellow mb-2" htmlFor="name">
@@ -74,7 +86,7 @@ export default function ContactPage() {
                     </p>
                     <p className="flex items-center text-pale-silver">
                       <span className="text-2xl mr-4">📧</span>
-                      info@aiacademy.com
+                      info@robo-monkey-ai.com
                     </p>
                   </div>
                 </div>
