@@ -54,10 +54,10 @@ export default function CoursesPage() {
                   </li>
                 </ul>
                 <Link 
-                  href="/courses/ai-explorers"
+                  href="/contact"
                   className="neon-button inline-block"
                 >
-                  Start Course
+                  START COURSE
                 </Link>
               </div>
             </div>
@@ -89,10 +89,10 @@ export default function CoursesPage() {
                   </li>
                 </ul>
                 <Link 
-                  href="/courses/ai-games"
+                  href="/contact"
                   className="neon-button inline-block"
                 >
-                  Start Course
+                  START COURSE
                 </Link>
               </div>
             </div>
@@ -124,10 +124,10 @@ export default function CoursesPage() {
                   </li>
                 </ul>
                 <Link 
-                  href="/courses/creative-ai"
+                  href="/contact"
                   className="neon-button inline-block"
                 >
-                  Start Course
+                  START COURSE
                 </Link>
               </div>
             </div>

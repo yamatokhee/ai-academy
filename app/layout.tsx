@@ -5,6 +5,7 @@ import dynamic from 'next/dynamic'
 import './globals.css'
 import './styles/cyberpunk.css'
 import Navigation from './components/Navigation'
+import Script from 'next/script'
 
 const Footer = dynamic(() => import('./components/Footer'), {
   ssr: false,
@@ -20,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Robo-Monkey AI Academy'
   },
   description: 'Discover fun AI learning at Robo-Monkey Academy. Interactive courses designed for kids aged 7-12. Start their tech journey today!',
-  keywords: ['AI for kids', 'kids coding 7-12', 'AI academy', 'robotics for children', 'STEM education', 'kids technology', 'AI learning'],
+  keywords: ['AI for kids', 'kids coding 7-12', 'AI academy', 'robotics for children', 'STEM education', 'kids technology', 'AI learning', 'coding for kids', 'artificial intelligence for children', 'tech education for kids'],
   authors: [{ name: 'Robo-Monkey AI Academy' }],
   creator: 'Robo-Monkey AI Academy',
   publisher: 'Robo-Monkey AI Academy',
@@ -66,6 +67,29 @@ export const metadata: Metadata = {
   verification: {
     google: 'your-google-site-verification',
   },
+  alternates: {
+    canonical: 'https://robomonkeyai.com',
+  },
+}
+
+const structuredData = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  "name": "Robo-Monkey AI Academy",
+  "description": "Interactive AI courses designed for kids aged 7-12",
+  "url": "https://robomonkeyai.com",
+  "logo": "https://robomonkeyai.com/og-image.jpg",
+  "sameAs": [
+    "https://twitter.com/robomonkeyai"
+  ],
+  "foundingDate": "2024",
+  "educationalLevel": "Elementary",
+  "teaches": ["Artificial Intelligence", "Coding", "Robotics", "STEM"],
+  "audience": {
+    "@type": "EducationalAudience",
+    "educationalRole": "student",
+    "ageRange": "7-12"
+  }
 }
 
 export default function RootLayout({
@@ -79,8 +103,26 @@ export default function RootLayout({
         <link rel="canonical" href="https://robomonkeyai.com" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        {/* Google Analytics */}
+        <Script
+          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          strategy="afterInteractive"
+        />
+        <Script id="google-analytics" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'G-XXXXXXXXXX');
+          `}
+        </Script>
       </head>
       <body className={`${inter.className} cyberpunk-container`}>
+        <Script
+          id="structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        />
         <div className="grid-background"></div>
         <header className="fixed top-0 left-0 right-0 z-50 bg-primary-dark/80 backdrop-blur-lg border-b border-electric-blue">
           <div className="container mx-auto px-4">

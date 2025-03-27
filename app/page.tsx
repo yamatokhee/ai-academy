@@ -78,12 +78,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-4">AI Explorers</h3>
                 <p className="mb-6">Perfect for beginners! Learn the basics of AI through fun activities and interactive games.</p>
                 <Link 
-                  href="/courses/intro-to-ai"
-                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
-                  aria-label="Learn more about AI Explorers course"
+                  href="/contact"
+                  className="neon-button inline-block"
+                  aria-label="Contact us about AI Explorers course"
                 >
-                  <span className="mr-2">Learn More</span>
-                  <span className="text-xl" aria-hidden="true">→</span>
+                  START COURSE
                 </Link>
               </div>
             </article>
@@ -96,12 +95,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-4">AI & Games</h3>
                 <p className="mb-6">Create your own AI-powered games and learn machine learning through interactive projects!</p>
                 <Link 
-                  href="/courses/ai-games"
-                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
-                  aria-label="Learn more about AI & Games course"
+                  href="/contact"
+                  className="neon-button inline-block"
+                  aria-label="Contact us about AI & Games course"
                 >
-                  <span className="mr-2">Learn More</span>
-                  <span className="text-xl" aria-hidden="true">→</span>
+                  START COURSE
                 </Link>
               </div>
             </article>
@@ -114,12 +112,11 @@ export default function Home() {
                 <h3 className="text-2xl font-bold mb-4">Creative AI</h3>
                 <p className="mb-6">Explore how AI can help create amazing artwork and music through hands-on creative projects!</p>
                 <Link 
-                  href="/courses/creative-ai"
-                  className="inline-flex items-center text-electric-blue hover:text-bright-yellow transition-colors"
-                  aria-label="Learn more about Creative AI course"
+                  href="/contact"
+                  className="neon-button inline-block"
+                  aria-label="Contact us about Creative AI course"
                 >
-                  <span className="mr-2">Learn More</span>
-                  <span className="text-xl" aria-hidden="true">→</span>
+                  START COURSE
                 </Link>
               </div>
             </article>
