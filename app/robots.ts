@@ -19,24 +19,17 @@ export default function robots(): MetadataRoute.Robots {
           '/_next/',
           '/static/',
           '/*.json$',
-          '/*.xml$',
+          '/*.xml$', // Note: This disallows all XML except the sitemap specified below
         ],
-        crawlDelay: 10,
       },
       {
-        userAgent: 'GPTBot',
-        disallow: ['/'],
-      },
-      {
-        userAgent: 'CCBot',
-        disallow: ['/'],
-      },
-      {
+        // Be specific for image bots if needed, otherwise '*' covers them
         userAgent: 'Googlebot-Image',
         allow: ['/*.jpg$', '/*.jpeg$', '/*.gif$', '/*.png$', '/*.webp$'],
-        disallow: ['/private/', '/admin/'],
+        disallow: ['/private/', '/admin/'], // Ensure images in private areas aren't crawled
       },
+      // Add more specific rules if needed for other bots
     ],
     sitemap: 'https://robomonkeyai.com/sitemap.xml',
   }
-} 
+}

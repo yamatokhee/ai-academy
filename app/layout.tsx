@@ -21,7 +21,7 @@ export const metadata: Metadata = {
     template: '%s | Robo-Monkey AI Academy'
   },
   description: 'Discover fun AI learning at Robo-Monkey Academy. Interactive courses designed for kids aged 7-12. Start their tech journey today!',
-  keywords: ['AI for kids', 'kids coding 7-12', 'AI academy', 'robotics for children', 'STEM education', 'kids technology', 'AI learning', 'coding for kids', 'artificial intelligence for children', 'tech education for kids'],
+  keywords: ['AI for kids', 'coding for kids ages 7-12', 'AI academy', 'robotics for children', 'STEM education', 'kids technology', 'AI learning', 'coding for kids', 'artificial intelligence for children', 'tech education for kids', 'AI education for kids', 'online AI courses for kids', 'artificial intelligence lessons for kids', 'machine learning for kids', 'coding classes for kids', 'robotics courses for kids', 'STEM programs for kids', 'technology education for children', 'AI curriculum for kids', 'best AI academy for kids'],
   authors: [{ name: 'Robo-Monkey AI Academy' }],
   creator: 'Robo-Monkey AI Academy',
   publisher: 'Robo-Monkey AI Academy',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification',
+    google: 'ysoHY1h8Jub4khsvU988H3nOla8GDNNxR-KFhoIU7eM',
   },
   alternates: {
     canonical: 'https://robomonkeyai.com',
@@ -105,7 +105,7 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.ico" />
         {/* Google Analytics */}
         <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+          src="https://www.googletagmanager.com/gtag/js?id=G-7NKL4670VJ"
           strategy="afterInteractive"
         />
         <Script id="google-analytics" strategy="afterInteractive">
@@ -113,7 +113,7 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'G-XXXXXXXXXX');
+            gtag('config', 'G-7NKL4670VJ');
           `}
         </Script>
       </head>
@@ -136,4 +136,4 @@ export default function RootLayout({
       </body>
     </html>
   )
-} 
+}

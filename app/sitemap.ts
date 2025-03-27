@@ -2,14 +2,15 @@ import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = 'https://robomonkeyai.com'
+  // For more accurate lastModified dates, consider fetching data or using file system info
   const currentDate = new Date()
 
   return [
     {
       url: baseUrl,
       lastModified: currentDate,
-      changeFrequency: 'daily',
-      priority: 1,
+      changeFrequency: 'daily', // Adjust frequency based on how often content changes
+      priority: 1, // Homepage usually has highest priority
     },
     {
       url: `${baseUrl}/about`,
@@ -21,32 +22,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: `${baseUrl}/courses`,
       lastModified: currentDate,
       changeFrequency: 'weekly',
-      priority: 0.9,
+      priority: 0.9, // Courses might be more important than 'about'
     },
     {
       url: `${baseUrl}/contact`,
       lastModified: currentDate,
-      changeFrequency: 'monthly',
+      changeFrequency: 'monthly', // Contact page likely changes infrequently
       priority: 0.7,
     },
-    // Add course-specific pages if you have them
-    {
-      url: `${baseUrl}/courses/beginner-ai`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/courses/advanced-robotics`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
-    {
-      url: `${baseUrl}/courses/stem-fundamentals`,
-      lastModified: currentDate,
-      changeFrequency: 'weekly',
-      priority: 0.85,
-    },
+    // Add more pages here if they exist, e.g., blog posts, specific course detail pages
   ]
-} 
+}
