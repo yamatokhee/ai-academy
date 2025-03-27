@@ -16,11 +16,11 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   metadataBase: new URL('https://robomonkeyai.com'),
   title: {
-    default: 'Robo-Monkey AI Academy | Kids AI Learning Platform',
+    default: 'Robo-Monkey AI Academy | Fun AI Learning for Kids 7-12',
     template: '%s | Robo-Monkey AI Academy'
   },
-  description: 'Join Robo-Monkey AI Academy - The premier AI learning platform for children under 9. Fun, interactive AI courses designed specifically for kids. Start your child\'s AI journey today!',
-  keywords: ['AI learning for kids', 'children AI education', 'kids coding', 'AI academy', 'robotics for children', 'AI courses for kids', 'STEM education', 'kids technology education'],
+  description: 'Discover fun AI learning at Robo-Monkey Academy. Interactive courses designed for kids aged 7-12. Start their tech journey today!',
+  keywords: ['AI for kids', 'kids coding 7-12', 'AI academy', 'robotics for children', 'STEM education', 'kids technology', 'AI learning'],
   authors: [{ name: 'Robo-Monkey AI Academy' }],
   creator: 'Robo-Monkey AI Academy',
   publisher: 'Robo-Monkey AI Academy',
@@ -34,21 +34,21 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: 'https://robomonkeyai.com',
     siteName: 'Robo-Monkey AI Academy',
-    title: 'Robo-Monkey AI Academy | Kids AI Learning Platform',
-    description: 'Join Robo-Monkey AI Academy - The premier AI learning platform for children under 9. Fun, interactive AI courses designed specifically for kids.',
+    title: 'Fun AI Learning for Kids 7-12 | Robo-Monkey Academy',
+    description: 'Interactive AI courses designed for kids aged 7-12. Join Robo-Monkey Academy and start their tech journey today!',
     images: [
       {
         url: '/og-image.jpg',
         width: 1200,
         height: 630,
-        alt: 'Robo-Monkey AI Academy',
+        alt: 'Robo-Monkey AI Academy - Fun AI Learning for Kids',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Robo-Monkey AI Academy | Kids AI Learning Platform',
-    description: 'Join Robo-Monkey AI Academy - The premier AI learning platform for children under 9. Fun, interactive AI courses designed specifically for kids.',
+    title: 'Fun AI Learning for Kids 7-12 | Robo-Monkey Academy',
+    description: 'Interactive AI courses designed for kids aged 7-12. Join Robo-Monkey Academy and start their tech journey today!',
     images: ['/og-image.jpg'],
     creator: '@robomonkeyai',
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification', // You'll need to add your Google Search Console verification code
+    google: 'your-google-site-verification',
   },
 }
 

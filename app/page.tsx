@@ -16,7 +16,7 @@ export default function Home() {
               Ready to Start Learning?
             </h1>
             <p className="text-xl md:text-2xl mb-12 leading-relaxed">
-              Join our AI Academy today and begin an amazing journey into the world of technology!
+              Join our AI Academy today and begin an amazing tech journey designed for kids aged 7-12!
             </p>
             <Link 
               href="/courses" 
@@ -40,7 +40,7 @@ export default function Home() {
               </div>
               <h3 className="text-2xl font-bold mb-4">Fun Learning Experience</h3>
               <p>
-                Interactive lessons designed specifically for children under 9 years old, making AI learning engaging and enjoyable.
+                Interactive lessons designed specifically for children aged 7-12, making AI learning engaging and enjoyable.
               </p>
             </article>
             <article className="cyberpunk-card p-8">
